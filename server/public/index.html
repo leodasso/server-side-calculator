@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Gruppo|Space+Mono:700" rel="stylesheet">
+    <script src="jquery-3.3.1.min.js"></script>
+
+    <!-- bootstrap shiz -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    <!-- my code -->
+    <script src="client.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Node Calculator</title>
+</head>
+<body class="main">
+    <h1>Server-Side Calculator</h1>
+    <p>All calculation happens on the server. Info is passed via jQuery ajax, parsed, 
+        and the answer & history is returned to the client.</p>
+    <div class="row calcHeader">
+        <div id="print" class="col-sm">0</div>
+        <button id="clear" class="col-sm">C</button>
+    </div>  
+    <div>
+        <table>
+            <tr>
+                <td><button id="7" class="calcButton upper-left" data-num="7">7</button></td>
+                <td><button id="8" class="calcButton" data-num="8">8</button></td>
+                <td><button id="9" class="calcButton" data-num="9">9</button></td>
+                <td><button id="plus" class="calcButton upper-right" data-num="+">+</button></td>
+            </tr>
+            <tr>
+                <td><button id="4" class="calcButton" data-num="4">4</button></td>
+                <td><button id="5" class="calcButton" data-num="5">5</button></td>
+                <td><button id="6" class="calcButton" data-num="6">6</button></td>
+                <td><button id="minus" class="calcButton" data-num="-">-</button></td>
+            </tr>
+            <tr>
+                <td><button id="1" class="calcButton" data-num="1">1</button></td>
+                <td><button id="2" class="calcButton" data-num="2">2</button></td>
+                <td><button id="3" class="calcButton" data-num="3">3</button></td>
+                <td><button id="times" class="calcButton" data-num="*">*</button></td>
+            </tr>
+            <tr>
+                <td><button id="0" class="calcButton lower-left" data-num="0">0</button></td>
+                <td><button id="dot" class="calcButton" data-num=".">.</button></td>
+                <td><button id="equal" class="calcButton" data-num="=">=</button></td>
+                <td><button id="divide" class="calcButton lower-right" data-num="/">/</button></td>
+            </tr>
+        </table>
+    </div>
+    <!-- <h1 id="result">0</h1> -->
+    <div id="historyGroup">
+        <h2>History</h2>
+        <div id="history">
+            <div class="historyItem">5 + 6 = 11</div>
+        </div>
+    </div>
+</body>
+</html>
